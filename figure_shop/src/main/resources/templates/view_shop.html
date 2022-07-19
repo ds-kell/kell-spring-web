@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>view figures</title>
+    <style>
+        table,th, td{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<h2>List figures</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Des</th>
+            <th colspan="2">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="figure : ${figureList}">
+            <td th:text="${figure.code}">code</td>
+            <td th:text="${figure.name}">name</td>
+            <td th:text="${figure.price}">price</td>
+            <td th:text="${figure.des}">pes</td>
+            <td>
+                <a th:href="@{/edit/{id} (id=${figure.id})}">edit</a>
+            </td>
+            <td>
+                <a th:href="@{/delete/{id} (id=${figure.id})}">delete</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<button style="margin: 1em 1em 1em 6em ">
+    <a th:href="@{/add}">Add figure</a>
+</button>
+<select>
+    <option th:each="figure : ${figureList}" th:text="${figure.name}"></option>
+</select>
+
+</body>
+</html>

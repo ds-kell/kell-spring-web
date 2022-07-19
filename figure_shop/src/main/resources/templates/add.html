@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add</title>
+    <style>
+        label, input, h1{
+            margin: 0 0 0 20px;
+        }
+    </style>
+</head>
+
+<body>
+<h1>add figure</h1>
+<form th:action="@{/process_add}" method="post" th:object="${figure}">
+    <label>code</label><br>
+    <input type="text" th:field="*{code}" placeholder="code" style="margin-bottom: 10px"><br>
+    <label>name</label><br>
+    <input type="text" th:field="*{name}" placeholder="name" style="margin-bottom: 10px"><br>
+    <label>price</label><br>
+    <input type="text" th:field="*{price}"  placeholder="price" style="margin-bottom: 10px;"><br>
+    <label>des</label><br>
+    <input type="text" th:field="*{des}" placeholder="des" style="margin-bottom:10px ;"><br>
+
+    <button type="submit" style="margin:10px 10px 10px 60px;">
+        add figure
+    </button>
+    <!--    <button style="margin:10px 10px 10px 100px;">-->
+    <!--        <a th:href="@{/success}">Submit</a>-->
+    <!--    </button>-->
+</form>
+
+
+</body>
+
+</html>
